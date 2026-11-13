@@ -1,5 +1,5 @@
 ---
-name: Page
+name: ページ
 about: HTML, CSS, JavaScript などの編集
 title: ''
 labels: page
