@@ -46,18 +46,50 @@ a {
   backdrop-filter: blur(10px);
   position: absolute;
 
-  border-radius: 2rem 2rem 0 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20vh;
-
-  /* For PC view */
-  @media (min-width: 768px) {
-    border-radius: 0 2rem 2rem 0;
+  /* For mobile view */
+  @media (max-width: 767.8px) {
+    transition: height 0.2s ease-in-out;
+    border-radius: 2rem 2rem 0 0;
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 5rem;
+  }
+  /* For PC view */
+  @media (min-width: 768px) {
+    transition: left 0.2s ease-in-out;
+    border-radius: 0 2rem 2rem 0;
+    bottom: 0;
+    left: -28rem;
     width: 30rem;
+    height: 100%;
+  }
+}
+#control-panel:has(#control-panel-is-view:checked) {
+  /* For mobile view */
+  @media (max-width: 767.8px) {
+    height: calc(100vh / 1.618);
+  }
+  /* For PC view */
+  @media (min-width: 768px) {
+    left: 0;
+  }
+}
+
+#control-panel-view-hitbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+
+  /* For mobile view */
+  @media (max-width: 767.8px) {
+    width: 100%;
+    height: 2rem;
+  }
+  /* For PC view */
+  @media (min-width: 768px) {
+    width: 2rem;
     height: 100%;
   }
 }
