@@ -93,3 +93,35 @@ a {
     height: 100%;
   }
 }
+#control-panel-view-hitbox::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 4rem;
+  height: 2rem;
+  background: url(./icons/arrow.svg) center / 4rem 2rem no-repeat;
+  transition: transform 0.2s linear;
+
+  /* For mobile view */
+  @media (max-width: 767.8px) {
+    transform: rotate(0deg);
+    top: 0;
+    right: calc(50% - 2rem);
+  }
+  /* For PC view */
+  @media (min-width: 768px) {
+    transform: rotate(90deg);
+    top: calc(50% - 1rem);
+    right: -1rem;
+  }
+}
+#control-panel-is-view:checked + #control-panel-view-hitbox::after {
+  /* For mobile view */
+  @media (max-width: 767.8px) {
+    transform: rotate(0deg) scaleY(-1);
+  }
+  /* For PC view */
+  @media (min-width: 768px) {
+    transform: rotate(90deg) scaleY(-1);
+  }
+}
